@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#  Password validation example
+
+password="${1:-secretpass}"
+echo ">$password<"
+echo "Length: ${#password}"
+
+# Should be >=10 in length
+
+# Validate
+if [[ ${#password} -lt 8 ]]; then
+    echo "Password to short"
+	exit 1
+fi
+
