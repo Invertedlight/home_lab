@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# example parameter expansion using args reference
+
+name="${1:-world}"
+log_level="${log_level:-info}"
+echo "Hello, $name (LOG_LEVEL: $log_level)"
+
+echo -e "\n\n\tTesting name is empty or unset"
+name=""
+name="${name:?}"
+name="${name:-world}"
+log_level="${log_level:=info}"
+echo "Hello, $name (LOG_LEVEL: $log_level)"
+
+# ex:
+#   ./loglevel ==> Hello, world (LOG_LEVEL: info)
+#   ./loglevel James ==> Hello, James (LOG_LEVEL: info)
+#   name is unset or empty
+#     ./logleel  ==> 1

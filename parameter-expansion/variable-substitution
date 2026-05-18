@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Temporary substitute for empty variable
+name=""
+echo "${name:-newName}" && echo "$name"
+echo "name is now: $name"
+
+
+# Set empty variable to new default
+name=""
+echo "${name:=newName}" && echo "$name"
+echo "mame is now: $name"
+
