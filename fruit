@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# ==============================================
+# Author: James Richardson 
+# Email: james.richardson@invertedlight.com
+# Script Name: fruit
+# Date Created: 2026-05-19  
+# Last Modified: 2026-05-19
+# Description:
+#   Demonstrates shell programming using case and parameter-expansion
+# Usage:
+#   fruit <apple|banana|kiwi>
+# returns the fruit color or unknown and error code 1
+# ==============================================
+
+# ============= Start of Code ==================
+
+if [[ $# -ne 1 ]]; then
+  echo "Usage: $0 {fruit}"
+  exit 1
+fi
+
+fruit=$1
+
+case $1 in
+  apple)
+    echo -e "Fruit color for $1 is \e[0;31mRED\e[0m"
+    ;;
+  banana)
+    echo -e "Fruit color for $1 is \e[1;33mYELLOW\e[0m"
+    ;;
+  orange)
+    echo -e "Fruit color fpr $1 is \e[0;33mORANGE\e[0m"
+    ;;
+  kiwi)
+    echo -e "Fruit color for $1 is \e[0;33mBROWN\e[0m"
+    ;;
+  *)
+    echo "Fruit not found: $fruit" >&2
+    exit 1
+esac
