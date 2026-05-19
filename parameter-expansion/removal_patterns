@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# ==============================================
+# Author: James Richardson 
+# Email: james.richardson@invertedlight.com
+# Script Name: removing_patterns
+# Date Created: 
+# Last Modified:
+# Description:
+# < Description of what is this script for >
+# Usage:
+# < How to use this script, flag usage or ... >
+# ==============================================
+
+# ============= Start of Code ==================
+
+filename="document.txt"
+echo "$filename"
+echo "${filename%.*}"  # document
+
+
+filepath="backup.test.2026.tar.gz"
+echo "$filepath"
+echo "${filepath%.*}"  # backup shortest path
+echo "${filepath%%.*}" # backup longest path
+
+### Remove prefix
+
+filepath="/home/user/document.txt"
+echo "${filepath#*/}"
+
+echo "${filepath##*/}"
+
+
+
+### Remove Prefix (from begining)
+
