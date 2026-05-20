@@ -21,6 +21,6 @@ cd "$HOME/dotfiles" 2>/dev/null
 
 for file in *; do
   [[ -f $file ]] || continue
-    echo "$file"
+    echo -e "\e[0;31m$file\e[m"
 done
 
